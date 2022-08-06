@@ -1,0 +1,11 @@
+  applications:
+  - name: myAppOne
+    routes:
+      - route: NCHA.us-south.cf.appdomain.cloud
+    memory: 128M
+    buildpack: python_buildpack
+  - name: myAppTwo
+    routes:
+      - route: NCHA.us-south.cf.appdomain.cloud/static
+    memory: 128M
+    buildpack: staticfile_buildpack
