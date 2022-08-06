@@ -1,11 +1,11 @@
   applications:
-  - name: myAppOne
+  - name: djangoapp
     routes:
-      - route: NCHA.us-south.cf.appdomain.cloud
+      - route: jfc.mybluemix.net
     memory: 128M
     buildpack: python_buildpack
-  - name: myAppTwo
+  - name: djangoapp-nginx
     routes:
-      - route: NCHA.us-south.cf.appdomain.cloud/static
+      - route: jfc.mybluemix.net/static
     memory: 128M
     buildpack: staticfile_buildpack
