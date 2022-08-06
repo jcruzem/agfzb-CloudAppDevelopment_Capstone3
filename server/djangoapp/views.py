@@ -105,7 +105,7 @@ def registration_request(request):
 def get_dealerships(request):
     context = {}
     if request.method == "GET":
-        url = "https://1be60b93.us-south.apigw.appdomain.cloud/api/dealership"
+        url = "https://d6f5d202.us-south.apigw.appdomain.cloud/dealerships"
         # Get dealers from the URL
         dealerships = get_dealers_from_cf(url)
         context['dealership_list'] = dealerships
@@ -118,11 +118,11 @@ def get_dealerships(request):
 def get_dealer_details(request, id):
     if request.method == "GET":
         context = {}
-        dealer_url = "https://1be60b93.us-south.apigw.appdomain.cloud/api/dealership"
+        dealer_url = "https://d6f5d202.us-south.apigw.appdomain.cloud/dealerships"
         dealer = get_dealer_by_id_from_cf(dealer_url, id=id)
         context["dealer"] = dealer
     
-        review_url = "https://1be60b93.us-south.apigw.appdomain.cloud/api/getreview"
+        review_url = "https://d6f5d202.us-south.apigw.appdomain.cloud/getreview"
         reviews = get_dealer_reviews_from_cf(review_url, id=id)
         print(reviews)
         context["reviews"] = reviews
@@ -134,7 +134,7 @@ def get_dealer_details(request, id):
 # ...
 def add_review(request, id):
     context = {}
-    dealer_url = "https://1be60b93.us-south.apigw.appdomain.cloud/api/dealership"
+    dealer_url = "https://d6f5d202.us-south.apigw.appdomain.cloud/dealerships"
     dealer = get_dealer_by_id_from_cf(dealer_url, id=id)
     context["dealer"] = dealer
     if request.method == 'GET':
